@@ -1,7 +1,7 @@
 importScripts('service-worker-utils.js')
 
 var URL = "ws://streambox1.trulylive.com:5051"
-//URL="ws://localhost:5051"
+URL="ws://localhost:5051"
 
 console.log("Service worker is alive!")
 
@@ -15,7 +15,7 @@ setInterval(ping,1000)
 function ping() {
     try {
         ws.send(JSON.stringify({
-            "message": "PING"
+            "message": "CONNECT"
         }))
     } catch(e) {
 
