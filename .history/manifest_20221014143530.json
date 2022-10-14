@@ -14,15 +14,10 @@
     "options_page": "settings.html",
     "content_scripts": [{
         "js": ["foreground.js"],
-        "matches": ["<all_urls>"]
+        "matches": ["https://github.com/*"]
     }],
-    "web_accessible_resources": [
-    {
-        "resources": ["foreground.js"],
-        "matches": ["<all_urls>"]
-    }
-    ],
-    "permissions": ["webRequest", "webNavigation","tabs","activeTab","scripting","contextMenus","fullscreen"],
+    "permissions": ["webRequest", "webNavigation","tabs",
+    "activeTab"],
     "host_permissions": [
         "*://*/*"
     ]

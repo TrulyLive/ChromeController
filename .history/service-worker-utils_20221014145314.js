@@ -39,13 +39,14 @@ function goTab() {
 
     chrome.scripting.executeScript({
         target: {tabId: myTab.id, allFrames: true},
-        files: ['foreground.js'],
+        files: ['content_scripts/cscript.js'],
     });
+    */
 
-    //chrome.scripting.executeScript({
-    //    target: {tabId: myTab.id, allFrames: true},
-    //    func:fullScreen
-    //},callbackScript);
+    chrome.scripting.executeScript({
+        target: {tabId: myTab.id, allFrames: true},
+        func:fullScreen
+    },callbackScript);
     
 }
 

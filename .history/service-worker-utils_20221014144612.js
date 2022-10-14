@@ -7,15 +7,17 @@ async function fixTabs() {
         tabs.forEach(function (tab) {
             console.log("Found Tab")
             console.log(tab)
-            if (myTab) {
-                if (tab.title!="Extensions") {
+            if (tab.title) {
+                if (myTab) {
                     console.log("Removing it!")
                     chrome.tabs.remove(tab.id)
+                } else {
+                    console.log("Using it!")
+                    myTab=tab
+                    goTab()
                 }
             } else {
-                console.log("Using it!")
-                myTab=tab
-                goTab()
+                console.log("This tab has no title")
             }
         });
         fixTabsDone();
@@ -37,19 +39,19 @@ function callBackOnCreate(tab) {
 function goTab() {
     chrome.tabs.update(myTab.id, {url: goto,active: true}); //,state: "fullscreen"
 
+    /*
     chrome.scripting.executeScript({
         target: {tabId: myTab.id, allFrames: true},
-        files: ['foreground.js'],
+        files: ['content_scripts/cscript.js'],
     });
+    */
 
-    //chrome.scripting.executeScript({
-    //    target: {tabId: myTab.id, allFrames: true},
-    //    func:fullScreen
-    //},callbackScript);
+    chrome.scripting.executeScript({
+        target: {tabId: myTab.id, allFrames: true},
+        func:fullScreen() 'document.documentElement.webkitRequestFullscreen()'
+    },callbackScript);
     
 }
-
 function callbackScript(x) {
-    console.log("Callback from executing full screen script")
-    console.log(x)
+    console.log("Callback")
 }

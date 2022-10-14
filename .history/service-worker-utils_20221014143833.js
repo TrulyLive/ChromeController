@@ -7,15 +7,17 @@ async function fixTabs() {
         tabs.forEach(function (tab) {
             console.log("Found Tab")
             console.log(tab)
-            if (myTab) {
-                if (tab.title!="Extensions") {
+            if (tab.title) {
+                if (myTab) {
                     console.log("Removing it!")
                     chrome.tabs.remove(tab.id)
+                } else {
+                    console.log("Using it!")
+                    myTab=tab
+                    goTab()
                 }
             } else {
-                console.log("Using it!")
-                myTab=tab
-                goTab()
+                console.log("This tab has no title")
             }
         });
         fixTabsDone();
@@ -35,21 +37,13 @@ function callBackOnCreate(tab) {
     goTab()
 }
 function goTab() {
-    chrome.tabs.update(myTab.id, {url: goto,active: true}); //,state: "fullscreen"
-
-    chrome.scripting.executeScript({
-        target: {tabId: myTab.id, allFrames: true},
-        files: ['foreground.js'],
-    });
-
-    //chrome.scripting.executeScript({
-    //    target: {tabId: myTab.id, allFrames: true},
-    //    func:fullScreen
-    //},callbackScript);
+    chrome.tabs.update(myTab.id, {url: goto,active: true,state: "fullscreen"});
+    chrome.tabs.executeScript(myTab.id,{
+        code: 'document.body.innerText;'
+        //If you had something somewhat more complex you can use an IIFE:
+        //code: '(function (){return document.body.innerText;})();'
+        //If your code was complex, you should store it in a
+        // separate .js file, which you inject with the file: property.
+    },receiveText);
     
-}
-
-function callbackScript(x) {
-    console.log("Callback from executing full screen script")
-    console.log(x)
 }

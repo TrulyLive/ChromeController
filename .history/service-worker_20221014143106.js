@@ -34,6 +34,3 @@ function connect() {
 
 
 connect()
-
-
-

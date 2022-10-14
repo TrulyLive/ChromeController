@@ -4,7 +4,7 @@ console.log("Service worker is alive!")
 
 console.log("Establishing WebSocket CLIENT")
 var ws
-var goto
+var 
 
 function connect() {
     ws = new WebSocket("ws://localhost:5051");
@@ -18,11 +18,13 @@ function connect() {
     ws.addEventListener("message", function(data) {
         console.log('MESSAGE RECEIVED: '+data.data)
         console.log(data.data);
-        goto=data.data
-        fixTabs()
+        fixTabs(data.data)
+        console.log("myTab is")
+        console.log(myTab)
+        chrome.tabs.update(myTab.id, {url: data.data});
     });
         
-    ws.addEventListener("close", function(e) {
+    ws.addEventListener("close", function() {
         console.log('Socket is closed. Reconnect will be attempted in 1 second.', e.reason);
         setTimeout(function() {
             connect();
@@ -34,6 +36,3 @@ function connect() {
 
 
 connect()
-
-
-

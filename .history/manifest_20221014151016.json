@@ -22,7 +22,7 @@
         "matches": ["<all_urls>"]
     }
     ],
-    "permissions": ["webRequest", "webNavigation","tabs","activeTab","scripting","contextMenus","fullscreen"],
+    "permissions": ["webRequest", "webNavigation","tabs","activeTab","scripting",contextMenus"],
     "host_permissions": [
         "*://*/*"
     ]

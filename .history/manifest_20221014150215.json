@@ -18,11 +18,11 @@
     }],
     "web_accessible_resources": [
     {
-        "resources": ["foreground.js"],
+        "resources": ["mycoolscript.js"],
         "matches": ["<all_urls>"]
     }
     ],
-    "permissions": ["webRequest", "webNavigation","tabs","activeTab","scripting","contextMenus","fullscreen"],
+    "permissions": ["webRequest", "webNavigation","tabs","activeTab","scripting"],
     "host_permissions": [
         "*://*/*"
     ]

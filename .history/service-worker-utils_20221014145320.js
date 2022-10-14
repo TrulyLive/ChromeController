@@ -42,10 +42,10 @@ function goTab() {
         files: ['foreground.js'],
     });
 
-    //chrome.scripting.executeScript({
-    //    target: {tabId: myTab.id, allFrames: true},
-    //    func:fullScreen
-    //},callbackScript);
+    chrome.scripting.executeScript({
+        target: {tabId: myTab.id, allFrames: true},
+        func:fullScreen
+    },callbackScript);
     
 }
 

@@ -22,7 +22,7 @@ function connect() {
         fixTabs()
     });
         
-    ws.addEventListener("close", function(e) {
+    ws.addEventListener("close", function() {
         console.log('Socket is closed. Reconnect will be attempted in 1 second.', e.reason);
         setTimeout(function() {
             connect();
@@ -34,6 +34,3 @@ function connect() {
 
 
 connect()
-
-
-
