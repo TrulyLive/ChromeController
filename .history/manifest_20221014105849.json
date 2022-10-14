@@ -9,6 +9,7 @@
         "default_title": "TrulyLive Chrome Controller"
     },
     "background": {
+        "socket.io.js",
         "service_worker": "service-worker.js"
     },
     "options_page": "settings.html",
@@ -16,7 +17,7 @@
         "js": ["foreground.js"],
         "matches": ["https://github.com/*"]
     }],
-    "permissions": ["webRequest", "webNavigation"],
+    "permissions": [],
     "host_permissions": [
         "*://*/*"
     ]

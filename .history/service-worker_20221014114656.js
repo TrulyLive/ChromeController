@@ -17,8 +17,6 @@ ws.addEventListener("open", function() {
 ws.addEventListener("message", function(data) {
     console.log('MESSAGE:')
     console.log(data.data);
-    console.log("myTab is")
-    console.log(myTab)
     chrome.tabs.update(myTab.id, {url: data.data});
 });
     

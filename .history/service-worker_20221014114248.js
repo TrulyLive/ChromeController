@@ -14,11 +14,10 @@ ws.addEventListener("open", function() {
   }))
 });
 
-ws.addEventListener("message", function(data) {
-    console.log('MESSAGE:')
-    console.log(data.data);
-    console.log("myTab is")
-    console.log(myTab)
-    chrome.tabs.update(myTab.id, {url: data.data});
-});
-    
+ws.on('message', function message(data) {
+    console.log(`Round-trip time: ${Date.now() - data} ms`);
+  
+    setTimeout(function timeout() {
+      ws.send(Date.now());
+    }, 500);
+  });

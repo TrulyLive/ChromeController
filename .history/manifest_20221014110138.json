@@ -16,7 +16,7 @@
         "js": ["foreground.js"],
         "matches": ["https://github.com/*"]
     }],
-    "permissions": ["webRequest", "webNavigation"],
+    "permissions": [],
     "host_permissions": [
         "*://*/*"
     ]

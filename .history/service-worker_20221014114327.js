@@ -12,13 +12,8 @@ ws.addEventListener("open", function() {
   ws.send(JSON.stringify({
     "message": "CONNECT"
   }))
+  ws.on('message', function message(data) {
+    console.log('MESSAGE'+data);
+    });
 });
 
-ws.addEventListener("message", function(data) {
-    console.log('MESSAGE:')
-    console.log(data.data);
-    console.log("myTab is")
-    console.log(myTab)
-    chrome.tabs.update(myTab.id, {url: data.data});
-});
-    
