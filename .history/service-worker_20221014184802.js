@@ -7,15 +7,7 @@ var ws
 var goto
 
 
-setInterval(ping,1000)
-
-function ping() {
-    try {
-        ws.send("ping")
-    } catch(e) {
-        
-    }
-}
+setInterval()
 
 function connect() {
     ws = new WebSocket("ws://streambox1.trulylive.com:5051");

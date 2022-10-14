@@ -11,9 +11,7 @@ setInterval(ping,1000)
 
 function ping() {
     try {
-        ws.send("ping")
-    } catch(e) {
-        
+        ws.
     }
 }
 
