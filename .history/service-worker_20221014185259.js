@@ -18,7 +18,7 @@ function ping() {
             "message": "PING"
         }))
     } catch(e) {
-        console.log("Ping Failed:"+e.message() )
+        console.
     }
 }
 
