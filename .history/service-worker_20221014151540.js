@@ -7,7 +7,7 @@ var ws
 var goto
 
 function connect() {
-    ws = new WebSocket("ws://streambox1.trulylive.com:5051");
+    ws = new WebSocket("ws://home.darp.farm:5051");
 
     ws.addEventListener("open", function() {
         ws.send(JSON.stringify({
