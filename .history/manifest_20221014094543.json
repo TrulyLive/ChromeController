@@ -1,0 +1,23 @@
+{
+    "name": "TrulyLive Chrome Controller",
+    "version": "1.0.0",
+    "description": "Remote Control of Chrome from vMix Controller",
+    "manifest_version": 3,
+    "author": "Carl Meek",
+    "action":{
+        "default_popup": "index.html",
+        "default_title": "TrulyLive Chrome Controller"
+    },
+    "background": {
+        "service_worker": "service-worker.js"
+    },
+    "options_page": "settings/settings.html",
+    "content_scripts": [{
+        "js": ["foreground.js"],
+        "matches": ["https://github.com/*"]
+    }],
+    "permissions": [],
+    "host_permissions": [
+        "*://*/*"
+    ]
+}
