@@ -6,5 +6,5 @@ setTimeout(setUserVideoWidth, 1000);
 function setUserVideoWidth() {
   console.log("Truly Live INTERCEPT script RUNNING!")
   document.getElementById('user-video').style.width='759px'
-  document.getElementById('user-video').style.height='427px'
+  document.getElementById('user-video').style.height='295px'
 }
