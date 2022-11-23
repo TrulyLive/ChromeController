@@ -2,7 +2,7 @@
 
 //function fullScreen() {
 //    var elem = document.documentElement;
-//    elem.requestFullscreen();
-//}
+//    elem.requestFullscreen()
+}
 
-//fullScreen();
+fullScreen();
