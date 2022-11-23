@@ -8,5 +8,5 @@ function setUserVideoWidth() {
   document.getElementById('user-video').style.width='759px'
   document.getElementById('user-video').style.height='427px'
   document.getElementById('user-video').style.left='115px'
-  document.getElementById('user-video').style.top='16px'
+  document.getElementById('user-video').style.top='427px'
 }
