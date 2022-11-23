@@ -35,19 +35,19 @@ function callBackOnCreate(tab) {
     goTab()
 }
 function goTab() {
+    console.log("goTab")
+    
     chrome.tabs.update(myTab.id, {url: goto,active: true}); //,state: "fullscreen"
 
-    /*
     chrome.scripting.executeScript({
         target: {tabId: myTab.id, allFrames: true},
-        files: ['content_scripts/cscript.js'],
+        files: ['foreground.js'],
     });
-    */
 
-    chrome.scripting.executeScript({
-        target: {tabId: myTab.id, allFrames: true},
-        func:fullScreen
-    },callbackScript);
+    //chrome.scripting.executeScript({
+    //    target: {tabId: myTab.id, allFrames: true},
+    //    func:fullScreen
+    //},callbackScript);
     
 }
 

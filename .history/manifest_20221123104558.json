@@ -20,7 +20,7 @@
     "web_accessible_resources": [
     {
         "resources": ["foreground.js"],
-        "matches": ["https://*/*"]
+        "matches": ["<all_urls>"]
     }
     ],
     "permissions": ["webRequest", "webNavigation","tabs","activeTab","scripting","contextMenus","alarms"],

@@ -14,13 +14,13 @@
     "options_page": "settings.html",
     "content_scripts": [{
         "js": ["foreground.js"],
-        "matches": ["https://*/*"],
+        "matches": ["<all_urls>"],
         "run_at": "document_end"
     }],
     "web_accessible_resources": [
     {
         "resources": ["foreground.js"],
-        "matches": ["https://*/*"]
+        "matches": ["<all_urls>"]
     }
     ],
     "permissions": ["webRequest", "webNavigation","tabs","activeTab","scripting","contextMenus","alarms"],

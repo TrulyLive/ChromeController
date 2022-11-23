@@ -35,6 +35,8 @@ function callBackOnCreate(tab) {
     goTab()
 }
 function goTab() {
+    console.log("goTab")
+
     chrome.tabs.update(myTab.id, {url: goto,active: true}); //,state: "fullscreen"
 
     chrome.scripting.executeScript({
@@ -47,6 +49,7 @@ function goTab() {
     //    func:fullScreen
     //},callbackScript);
     
+    console.log("goTab Done")
 }
 
 function callbackScript(x) {
