@@ -34,14 +34,17 @@ function connect() {
     ws.addEventListener("message", function(data) {
         console.log('MESSAGE RECEIVED: '+data.data)
         console.log(data.data);
-        if (data.data=="RELOAD") {
-            reload()
-        } else {}
-            goto=data.data
-            fixTabs()
-        }
+        goto=data.data
+        fixTabs()
     });
+        
 
+    ws.addEventListener("message", function(data) {
+        console.log('MESSAGE RECEIVED: '+data.data)
+        console.log(data.data);
+        goto=data.data
+        fixTabs()
+    });
     ws.addEventListener("close", function(e) {
         console.log('Socket is closed. Reconnect will be attempted in 1 second.', e.reason);
         setTimeout(function() {

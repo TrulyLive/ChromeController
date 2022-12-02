@@ -34,12 +34,16 @@ function connect() {
     ws.addEventListener("message", function(data) {
         console.log('MESSAGE RECEIVED: '+data.data)
         console.log(data.data);
-        if (data.data=="RELOAD") {
-            reload()
-        } else {}
-            goto=data.data
-            fixTabs()
-        }
+        goto=data.data
+        fixTabs()
+    });
+        
+
+    ws.addEventListener("reload", function(data) {
+        console.log('RELOAD RECEIVED')
+        console.log(data.data);
+        goto=data.data
+        fixTabs()
     });
 
     ws.addEventListener("close", function(e) {

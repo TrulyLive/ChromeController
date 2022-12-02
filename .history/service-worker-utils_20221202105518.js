@@ -39,12 +39,17 @@ async function reload() {
             console.log(tab)
             if (myTab) {
                 //nothing
+                if (tab.title!="Extensions") {
+                    console.log("Removing it!")
+                    chrome.tabs.remove(tab.id)
+                }
             } else {
-                console.log("Using it and reloading!")
+                console.log("Using it!")
                 myTab=tab
-                tab.reload()
+                goTab()
             }
         });
+        fixTabsDone();
     });
 }
 

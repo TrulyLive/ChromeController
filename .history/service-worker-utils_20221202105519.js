@@ -40,11 +40,12 @@ async function reload() {
             if (myTab) {
                 //nothing
             } else {
-                console.log("Using it and reloading!")
+                console.log("Using it!")
                 myTab=tab
-                tab.reload()
+                goTab()
             }
         });
+        fixTabsDone();
     });
 }
 

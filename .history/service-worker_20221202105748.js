@@ -41,6 +41,12 @@ function connect() {
             fixTabs()
         }
     });
+        
+
+    ws.addEventListener("reload", function(data) {
+        console.log('RELOAD RECEIVED')
+        console.log(data.data);
+    });
 
     ws.addEventListener("close", function(e) {
         console.log('Socket is closed. Reconnect will be attempted in 1 second.', e.reason);
