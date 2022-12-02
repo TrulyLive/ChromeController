@@ -42,7 +42,7 @@ async function reload() {
             } else {
                 console.log("Using it and reloading!")
                 myTab=tab
-                chrome.tabs.reload(tab.id);
+                chrome.tabs.reload(tab.reload()
             }
         });
     });
