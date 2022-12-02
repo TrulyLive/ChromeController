@@ -36,7 +36,7 @@ function connect() {
         console.log(data.data);
         if (data.data=="RELOAD") {
             reload()
-        } else {
+        } else }
             goto=data.data
             fixTabs()
         }
